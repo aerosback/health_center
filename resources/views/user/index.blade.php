@@ -10,6 +10,12 @@
 
 @section('content')	
 	<h1 style="text-align:center">{{ $title }}</h1>
+
+	@if(Session::has('flash_message'))
+			<div style="color:green; border:1px solid #aaa; padding:4px; margin-top:10px">
+				{{ Session::get('flash_message') }}
+			</div>
+	@endif
 	
 	@if(Auth::check())
 		<h3 style="text-align:center">Bienvenido:</h3>

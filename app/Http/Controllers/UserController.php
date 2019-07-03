@@ -162,5 +162,6 @@ class UserController extends Controller
         }
         $spec_docs = HcSpecDoctor::with(['specialty','doctor'])->get();
         return view('user.medics', array('title' => 'Medicos y especialidades', 'entries' => $spec_docs));
-    }  
+    }
+
 }
