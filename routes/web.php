@@ -20,15 +20,17 @@ Route::post('/store', array('as' => 'user.store', 'uses' => 'UserController@stor
 Route::post('/authenticate', array('as' => 'user.authenticate', 'uses' => 'UserController@authenticate'));
 Route::get('/logout', array('as' => 'user.logout', 'uses' => 'UserController@logout'));
 Route::get('/account', array('as' => 'user.account', 'uses' => 'UserController@account'))->middleware('auth');
-Route::get('/medics', array('as' => 'user.medics', 'uses' => 'UserController@medics'))->middleware('auth');
+
 */
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('homee');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/medics', array('as' => 'medics', 'uses' => 'UserController@medics'))->middleware('auth');
