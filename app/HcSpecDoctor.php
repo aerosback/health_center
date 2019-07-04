@@ -20,6 +20,7 @@ class HcSpecDoctor extends Model
     public function specialty(){
     	return $this->belongsTo(HcSpecialty::class);
     }
+    
 
     /*
     public function doctorIdList(){
@@ -32,7 +33,7 @@ class HcSpecDoctor extends Model
 	*/
 
     public function specialtyId(){
-    	//return $this->belongsTo('App\HcSpecialty', 'id');
+        //return $this->belongsTo('App\HcDoctor', 'id');
     	return $this->belongsTo(HcSpecialty::class);
     }
 }
