@@ -7,22 +7,18 @@
 @endsection
 @section('content')
     <div id="login">
-        <h3 class="text-center text-white pt-5">Login form</h3>
+        <h3 class="text-center text-white pt-5">Reset Form</h3>
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
                         	{!! Form::open([
-                        	'route' => 'user.authenticate'
+                        	'route' => 'password.email'
                         	]) !!}
-                            <h3 class="text-center text-info">Login</h3>
+                            <h3 class="text-center text-info">Reset Form</h3>
                             <div class="form-group">
-                                <label for="username" class="text-info">Username:</label><br>
+                                <label for="username" class="text-info">Email:</label><br>
                                 {!! Form::email('email', null, ['class' => 'form-control',]) !!}
-                            </div>
-                            <div class="form-group">
-                                <label for="password" class="text-info">Password:</label><br>
-                                {!! Form::password('password', null, ['class' => 'form-control',]) !!}
                             </div>
                             <div class="form-group">
                                 <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>

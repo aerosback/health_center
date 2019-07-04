@@ -25,7 +25,7 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.
@@ -35,5 +35,10 @@ class ResetPasswordController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    public function getSendResetLinkEmailSuccessResponse(){
+        Session::flash('flash_message', 'Se envio el enlace de recuperacion a su correo!');
+        return View::make('user.index');
     }
 }
